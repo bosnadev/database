@@ -14,7 +14,7 @@ class PostgresConnection extends Connection {
      */
     protected function getDefaultQueryGrammar()
     {
-        return $this->withTablePrefix(new \Illuminate\Database\Query\Grammars\PostgresGrammar);
+        return $this->withTablePrefix(new Query\Grammars\PostgresGrammar);
     }
 
 
