@@ -1,6 +1,7 @@
 <?php namespace Bosnadev\Database\Schema\Grammars;
 
 use Illuminate\Support\Fluent;
+use Bosnadev\Database\Schema\Blueprint;
 
 /**
  * Class PostgresGrammar
@@ -21,6 +22,8 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
     }
 
     /**
+     * Create the column definition for a hstore type.
+     *
      * @param Fluent $column
      * @return string
      */
@@ -29,11 +32,23 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
     }
 
     /**
+     * Create the column definition for a uuid type.
+     *
      * @param Fluent $column
      * @return string
      */
     protected function typeUuid(Fluent $column) {
         return "uuid";
+    }
+
+    /**
+     * Create the column definition for a jsonb type.
+     *
+     * @param Fluent $column
+     * @return string
+     */
+    protected function typeJsonb(Fluent $column) {
+        return "jsonb";
     }
 
     /**
@@ -59,6 +74,20 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      */
     protected function isUuid($value) {
         return preg_match( '/^uuid_generate_v/', $value );
+    }
+
+    /**
+     * Compile a gin index key command.
+     *
+     * @param  \Bosnadev\Database\Schema\Blueprint  $blueprint
+     * @param  \Illuminate\Support\Fluent  $command
+     * @return string
+     */
+    public function compileGin(Blueprint $blueprint, Fluent $command)
+    {
+        $columns = $this->columnize($command->columns);
+
+        return "create index {$command->index} on ".$this->wrapTable($blueprint)." using gin ({$columns})";
     }
 
 }
