@@ -1,6 +1,7 @@
 <?php namespace Bosnadev\Database\Schema\Grammars;
 
 use Illuminate\Support\Fluent;
+use Bosnadev\Database\Schema\Blueprint;
 
 /**
  * Class PostgresGrammar
@@ -73,6 +74,20 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      */
     protected function isUuid($value) {
         return preg_match( '/^uuid_generate_v/', $value );
+    }
+
+    /**
+     * Compile a gin index key command.
+     *
+     * @param  \Bosnadev\Database\Schema\Blueprint  $blueprint
+     * @param  \Illuminate\Support\Fluent  $command
+     * @return string
+     */
+    public function compileGin(Blueprint $blueprint, Fluent $command)
+    {
+        $columns = $this->columnize($command->columns);
+
+        return "create index {$command->index} on ".$this->wrapTable($blueprint)." using gin ({$columns})";
     }
 
 }
