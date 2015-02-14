@@ -1,9 +1,9 @@
-<?php namespace Bosnadev\Foundation\Database;
+<?php namespace Bosnadev\Database;
 
 /**
  * Class PostgresConnection
  *
- * @package Bosnadev\Foundation\Database
+ * @package Bosnadev\Database
  */
 class PostgresConnection extends Connection {
 

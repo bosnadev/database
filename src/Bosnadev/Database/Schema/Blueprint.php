@@ -1,8 +1,8 @@
-<?php namespace Bosnadev\Foundation\Database\Schema;
+<?php namespace Bosnadev\Database\Schema;
 
 /**
  * Class Blueprint
- * @package Bosnadev\Foundation\Database\Schema
+ * @package Bosnadev\Database\Schema
  */
 class Blueprint extends \Illuminate\Database\Schema\Blueprint
 {

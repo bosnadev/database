@@ -1,10 +1,10 @@
-<?php namespace Bosnadev\Foundation\Database\Schema\Grammars;
+<?php namespace Bosnadev\Database\Schema\Grammars;
 
 use Illuminate\Support\Fluent;
 
 /**
  * Class PostgresGrammar
- * @package Bosnadev\Foundation\Database\Schema\Grammars
+ * @package Bosnadev\Database\Schema\Grammars
  */
 class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGrammar {
 

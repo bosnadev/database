@@ -1,5 +1,5 @@
 {
-    "name": "bosnadev/foundation",
+    "name": "bosnadev/database",
     "description": "",
     "authors": [
         {
@@ -9,15 +9,12 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.2.*"
+        "illuminate/support": "5.*"
     },
     "autoload": {
-        "classmap": [
-            "src/migrations"
-        ],
-        "psr-0": {
-            "Bosnadev\\Foundation\\": "src/"
+        "psr-4": {
+            "Bosnadev\\Database\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }

@@ -1,13 +1,13 @@
-<?php namespace Bosnadev\Foundation\Database;
+<?php namespace Bosnadev\Database;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
-use Bosnadev\Foundation\Database\Connectors\ConnectionFactory;
+use Bosnadev\Database\Connectors\ConnectionFactory;
 use Illuminate\Database\DatabaseManager;
 
 /**
  * Class DatabaseServiceProvider
- * @package Bosnadev\Foundation\Database
+ * @package Bosnadev\Database
  */
 class DatabaseServiceProvider extends \Illuminate\Database\DatabaseServiceProvider {
 

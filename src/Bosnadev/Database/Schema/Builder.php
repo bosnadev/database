@@ -1,9 +1,9 @@
-<?php namespace Bosnadev\Foundation\Database\Schema;
+<?php namespace Bosnadev\Database\Schema;
 
 use Closure;
 /**
  * Class Builder
- * @package Bosnadev\Foundation\Database\Schema
+ * @package Bosnadev\Database\Schema
  */
 class Builder extends \Illuminate\Database\Schema\Builder {
 
