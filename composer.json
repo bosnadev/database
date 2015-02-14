@@ -9,15 +9,15 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.2.*"
+        "illuminate/support": "5.*"
     },
     "autoload": {
         "classmap": [
             "src/migrations"
         ],
-        "psr-0": {
+        "psr-4": {
             "Bosnadev\\Foundation\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
