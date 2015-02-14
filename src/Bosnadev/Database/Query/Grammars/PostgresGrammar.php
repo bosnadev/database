@@ -1,8 +1,8 @@
-<?php namespace Bosnadev\Foundation\Database\Query\Grammars;
+<?php namespace Bosnadev\Database\Query\Grammars;
 
 /**
  * Class PostgresGrammar
- * @package Bosnadev\Foundation\Database\Query\Grammars
+ * @package Bosnadev\Database\Query\Grammars
  */
 class PostgresGrammar extends \Illuminate\Database\Query\Grammars\PostgresGrammar {
 

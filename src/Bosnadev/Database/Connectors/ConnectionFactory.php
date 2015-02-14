@@ -1,15 +1,14 @@
-<?php namespace Bosnadev\Foundation\Database\Connectors;
+<?php namespace Bosnadev\Database\Connectors;
 
 use PDO;
-use Illuminate\Container\Container;
 use Illuminate\Database\MySqlConnection;
 use Illuminate\Database\SQLiteConnection;
 use Illuminate\Database\SqlServerConnection;
-use Bosnadev\Foundation\Database\PostgresConnection;
+use Bosnadev\Database\PostgresConnection;
 
 /**
  * Class ConnectionFactory
- * @package Bosnadev\Foundation\Database\Connectors
+ * @package Bosnadev\Database\Connectors
  */
 class ConnectionFactory extends \Illuminate\Database\Connectors\ConnectionFactory {
 

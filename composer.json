@@ -1,5 +1,5 @@
 {
-    "name": "bosnadev/foundation",
+    "name": "bosnadev/database",
     "description": "",
     "authors": [
         {
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Bosnadev\\Foundation\\": "src/"
+            "Bosnadev\\Database\\": "src/"
         }
     },
     "minimum-stability": "dev"
