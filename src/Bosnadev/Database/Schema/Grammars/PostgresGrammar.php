@@ -21,6 +21,8 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
     }
 
     /**
+     * Create the column definition for a hstore type.
+     *
      * @param Fluent $column
      * @return string
      */
@@ -29,11 +31,23 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
     }
 
     /**
+     * Create the column definition for a uuid type.
+     *
      * @param Fluent $column
      * @return string
      */
     protected function typeUuid(Fluent $column) {
         return "uuid";
+    }
+
+    /**
+     * Create the column definition for a jsonb type.
+     *
+     * @param Fluent $column
+     * @return string
+     */
+    protected function typeJsonb(Fluent $column) {
+        return "jsonb";
     }
 
     /**

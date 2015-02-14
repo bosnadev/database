@@ -34,4 +34,14 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
     public function uuid($column) {
         return $this->addColumn('uuid', $column);
     }
+
+    /**
+     * Create a new jsonb column on the table
+     * 
+     * @param $column
+     * @return \Illuminate\Support\Fluent
+     */
+    public function jsonb($column) {
+        return $this->addColumn('jsonb', $column);
+    }
 } 
