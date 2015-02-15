@@ -1,7 +1,5 @@
 <?php namespace Bosnadev\Database;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\ServiceProvider;
 use Bosnadev\Database\Connectors\ConnectionFactory;
 use Illuminate\Database\DatabaseManager;
 

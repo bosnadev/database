@@ -1,6 +1,7 @@
 {
     "name": "bosnadev/database",
-    "description": "",
+    "description": "Eloquent Extended, added some PostgreSql features",
+    "keywords": ["laravel", "eloquent", "database", "mysql", "postgresql", "database"],
     "authors": [
         {
             "name": "Mirza Pasic",
@@ -9,12 +10,19 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "5.*"
+        "illuminate/support": "5.*",
+        "rhumsaa/uuid": "~2.8"
     },
     "autoload": {
         "psr-4": {
             "Bosnadev\\Database\\": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "autoload-dev": {
+      "psr-4": {
+        "Bosnadev\\Tests\\Database\\": "tests/"
+      }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
