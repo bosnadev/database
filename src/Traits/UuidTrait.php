@@ -1,4 +1,4 @@
-<?php namespace Bosnadev\Database\src\Traits;
+<?php namespace Bosnadev\Database\Traits;
 
 use Rhumsaa\Uuid\Uuid;
 
