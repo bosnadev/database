@@ -28,22 +28,11 @@ class ConnectionFactory extends \Illuminate\Database\Connectors\ConnectionFactor
             return $this->container->make($key, array($connection, $database, $prefix, $config));
         }
 
-        switch ($driver)
-        {
-            case 'mysql':
-                return new MySqlConnection($connection, $database, $prefix, $config);
-
-            case 'pgsql':
-                return new PostgresConnection($connection, $database, $prefix, $config);
-
-            case 'sqlite':
-                return new SQLiteConnection($connection, $database, $prefix, $config);
-
-            case 'sqlsrv':
-                return new SqlServerConnection($connection, $database, $prefix, $config);
+        if($driver === 'pgsql') {
+            return new PostgresConnection($connection, $database, $prefix, $config);
         }
 
-        throw new \InvalidArgumentException("Unsupported driver [$driver]");
+        return parent::createConnection( $driver, $connection, $database, $prefix, $config );
     }
 
 } 
