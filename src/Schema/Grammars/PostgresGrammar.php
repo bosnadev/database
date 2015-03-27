@@ -87,7 +87,7 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
     {
         $columns = $this->columnize($command->columns);
 
-        return "create index {$command->index} on ".$this->wrapTable($blueprint)." using gin ({$columns})";
+        return sprintf('CREATE INDEX %s ON %s USING GIN(%s)', $command->index, $this->wrapTable($blueprint), $columns);
     }
 
 }

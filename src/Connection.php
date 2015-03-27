@@ -17,13 +17,4 @@ class Connection extends \Illuminate\Database\Connection {
 
         return new Schema\Builder($this);
     }
-
-    /**
-     *
-     */
-    public function useDefaultSchemaGrammar()
-    {
-        $this->schemaGrammar = $this->getDefaultSchemaGrammar();
-    }
-
 }
