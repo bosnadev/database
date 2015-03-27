@@ -13,14 +13,21 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=5.5",
         "illuminate/database": "~5.0",
         "rhumsaa/uuid": "~2.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.5",
+        "mockery/mockery": "0.9.*"
     },
     "autoload": {
         "psr-4": {
             "Bosnadev\\Database\\": "src/"
-        }
+        },
+        "classmap": [
+            "tests/BaseTestCase.php"
+        ]
     },
     "autoload-dev": {
       "psr-4": {
