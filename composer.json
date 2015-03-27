@@ -13,11 +13,12 @@
         }
     ],
     "require": {
-        "php": ">=5.5",
+        "php": ">=5.4",
         "illuminate/database": "~5.0",
         "rhumsaa/uuid": "~2.8"
     },
     "require-dev": {
+        "php": ">=5.5",
         "phpunit/phpunit": "~4.5",
         "mockery/mockery": "0.9.*"
     },
