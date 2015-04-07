@@ -6,23 +6,34 @@
         {
             "name": "Mirza Pasic",
             "email": "mirza.pasic@edu.fit.ba"
+        },
+        {
+            "name": "Peter Haza",
+            "email": "peter.haza@gmail.com"
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "5.*",
+        "php": ">=5.4",
+        "illuminate/database": "~5.0",
         "rhumsaa/uuid": "~2.8"
+    },
+    "require-dev": {
+        "php": ">=5.5",
+        "phpunit/phpunit": "~4.5",
+        "mockery/mockery": "0.9.*"
     },
     "autoload": {
         "psr-4": {
             "Bosnadev\\Database\\": "src/"
-        }
+        },
+        "classmap": [
+            "tests/BaseTestCase.php"
+        ]
     },
     "autoload-dev": {
       "psr-4": {
         "Bosnadev\\Tests\\Database\\": "tests/"
       }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "minimum-stability": "stable"
 }

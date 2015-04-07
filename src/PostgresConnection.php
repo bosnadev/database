@@ -1,11 +1,26 @@
 <?php namespace Bosnadev\Database;
 
+
+use Illuminate\Database\Connection;
+
 /**
  * Class PostgresConnection
  *
  * @package Bosnadev\Database
  */
 class PostgresConnection extends Connection {
+
+    /**
+     * Get a schema builder instance for the connection.
+     *
+     * @return Schema\Builder
+     */
+    public function getSchemaBuilder()
+    {
+        if (is_null($this->schemaGrammar)) { $this->useDefaultSchemaGrammar(); }
+
+        return new Schema\Builder($this);
+    }
 
     /**
      * Get the default query grammar instance.

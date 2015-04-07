@@ -1,6 +1,8 @@
 <?php namespace Bosnadev\Database\Traits;
 
+use Illuminate\Database\Eloquent\Model;
 use Rhumsaa\Uuid\Uuid;
+use RuntimeException;
 
 /**
  * Class UuidTrait
@@ -13,11 +15,9 @@ trait UuidTrait {
      *
      * @return void
      */
-    protected static function boot()
+    protected static function bootUuidTrait()
     {
-        parent::boot();
-
-        static::creating(function ($model) {
+        static::creating(function (Model $model) {
             $model->provideUuidKey($model);
         });
     }
@@ -34,6 +34,11 @@ trait UuidTrait {
 
             if(empty($model->$key))
                 $model->$key = (string)Uuid::uuid4();
+        }
+        else {
+            throw new RuntimeException(
+              sprintf( '$incrementing must be false on class "%s" to support uuid', get_class( $this ) )
+            );
         }
     }
 }
