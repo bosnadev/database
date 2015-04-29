@@ -20,7 +20,8 @@
     "require-dev": {
         "php": ">=5.4",
         "phpunit/phpunit": "~4.5",
-        "mockery/mockery": "0.9.*"
+        "mockery/mockery": "0.9.*",
+        "doctrine/dbal": "~2.5"
     },
     "autoload": {
         "psr-4": {
