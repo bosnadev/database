@@ -1,14 +1,14 @@
 <?php namespace Bosnadev\Database;
 
 
-use Illuminate\Database\Connection;
+use Illuminate\Database\PostgresConnection as BasePostgresConnection;
 
 /**
  * Class PostgresConnection
  *
  * @package Bosnadev\Database
  */
-class PostgresConnection extends Connection {
+class PostgresConnection extends BasePostgresConnection {
 
     /**
      * Get a schema builder instance for the connection.
