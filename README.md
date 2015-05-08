@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Bosnadev/Database.svg?branch=master)](https://travis-ci.org/Bosnadev/Database)
+
+
 Laravel-Postgres-Extended
 =========================
 
