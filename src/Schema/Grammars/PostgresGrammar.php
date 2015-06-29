@@ -7,9 +7,8 @@ use Bosnadev\Database\Schema\Blueprint;
  * Class PostgresGrammar
  * @package Bosnadev\Database\Schema\Grammars
  */
-class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGrammar {
-
-
+class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGrammar
+{
     /**
      * Create the column definition for a character type.
      *
@@ -27,7 +26,8 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      * @param Fluent $column
      * @return string
      */
-    protected function typeHstore(Fluent $column) {
+    protected function typeHstore(Fluent $column)
+    {
         return "hstore";
     }
 
@@ -37,7 +37,8 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      * @param Fluent $column
      * @return string
      */
-    protected function typeUuid(Fluent $column) {
+    protected function typeUuid(Fluent $column)
+    {
         return "uuid";
     }
 
@@ -47,7 +48,8 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      * @param Fluent $column
      * @return string
      */
-    protected function typeJsonb(Fluent $column) {
+    protected function typeJsonb(Fluent $column)
+    {
         return "jsonb";
     }
 
@@ -57,11 +59,17 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      */
     protected function getDefaultValue($value)
     {
-        if ($value instanceof Expression) return $value;
+        if ($value instanceof Expression) {
+            return $value;
+        }
 
-        if (is_bool($value)) return "'".intval($value)."'";
+        if (is_bool($value)) {
+            return "'".intval($value)."'";
+        }
 
-        if( $this->isUuid( $value ) ) return strval($value);
+        if ($this->isUuid($value)) {
+            return strval($value);
+        }
 
         return "'".strval($value)."'";
     }
@@ -72,8 +80,9 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      * @param $value
      * @return int
      */
-    protected function isUuid($value) {
-        return preg_match( '/^uuid_generate_v/', $value );
+    protected function isUuid($value)
+    {
+        return preg_match('/^uuid_generate_v/', $value);
     }
 
     /**
@@ -89,5 +98,4 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
 
         return sprintf('CREATE INDEX %s ON %s USING GIN(%s)', $command->index, $this->wrapTable($blueprint), $columns);
     }
-
 }

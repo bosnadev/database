@@ -1,12 +1,13 @@
 <?php namespace Bosnadev\Database\Schema;
 
 use Closure;
+
 /**
  * Class Builder
  * @package Bosnadev\Database\Schema
  */
-class Builder extends \Illuminate\Database\Schema\Builder {
-
+class Builder extends \Illuminate\Database\Schema\Builder
+{
     /**
      * Create a new command set with a Closure.
      *
@@ -18,5 +19,4 @@ class Builder extends \Illuminate\Database\Schema\Builder {
     {
         return new Blueprint($table, $callback);
     }
-
 }

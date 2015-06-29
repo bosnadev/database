@@ -6,51 +6,59 @@ use Illuminate\Database\Eloquent\Model;
 use Mockery;
 use RuntimeException;
 
-class UuidTraitTest extends BaseTestCase {
-	public function testTraitIsBooted()
-	{
-		$model = new UuidBootingModelStub();
-		$this->assertTrue( $model::$uuidBooted );
-	}
+class UuidTraitTest extends BaseTestCase
+{
+    public function testTraitIsBooted()
+    {
+        $model = new UuidBootingModelStub();
+        $this->assertTrue($model::$uuidBooted);
+    }
 
-	/**
-	 * @expectedException RuntimeException
-	 */
-	public function testRequiredIncrementingFalse() {
-		$model = new UuidAssignsUuidStub();
-		$model->_provideUuidKey();
-	}
+    /**
+     * @expectedException RuntimeException
+     */
+    public function testRequiredIncrementingFalse()
+    {
+        $model = new UuidAssignsUuidStub();
+        $model->_provideUuidKey();
+    }
 
-	public function testUuidAssignsUuid() {
-		$model = new UuidAssignsUuidStub2();
+    public function testUuidAssignsUuid()
+    {
+        $model = new UuidAssignsUuidStub2();
 
-		$model->_provideUuidKey();
+        $model->_provideUuidKey();
 
-		$this->assertEquals( 4, substr_count( $model->id, '-' ) );
-	}
+        $this->assertEquals(4, substr_count($model->id, '-'));
+    }
 }
 
-class UuidBootingModelStub extends Model {
-	use UuidTrait;
+class UuidBootingModelStub extends Model
+{
+    use UuidTrait;
 
-	public static $uuidBooted = false;
+    public static $uuidBooted = false;
 
-	public static function bootUuidTrait() {
-		static::$uuidBooted = true;
-	}
+    public static function bootUuidTrait()
+    {
+        static::$uuidBooted = true;
+    }
 }
 
-class UuidAssignsUuidStub extends Model {
-	use UuidTrait;
+class UuidAssignsUuidStub extends Model
+{
+    use UuidTrait;
 
-	public $timestamps = false;
-	public $incrementing = true;
+    public $timestamps = false;
+    public $incrementing = true;
 
-	public function _provideUuidKey() {
-		$this->provideUuidKey( $this );
-	}
+    public function _provideUuidKey()
+    {
+        $this->provideUuidKey($this);
+    }
 }
 
-class UuidAssignsUuidStub2 extends UuidAssignsUuidStub {
-	public $incrementing = false;
+class UuidAssignsUuidStub2 extends UuidAssignsUuidStub
+{
+    public $incrementing = false;
 }

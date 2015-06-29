@@ -4,23 +4,25 @@ use Illuminate\Container\Container;
 use Bosnadev\Database\Connectors\ConnectionFactory;
 use Bosnadev\Database\PostgresConnection;
 
-class ConnectionFactoryBaseTest extends BaseTestCase {
-	public function testMakeCallsCreateConnection()
-	{
-		$pgConfig = [ 'driver' => 'pgsql', 'prefix' => 'prefix', 'database' => 'database', 'name' => 'foo' ];
-		$pdo      = new DatabaseConnectionFactoryPDOStub;
+class ConnectionFactoryBaseTest extends BaseTestCase
+{
+    public function testMakeCallsCreateConnection()
+    {
+        $pgConfig = [ 'driver' => 'pgsql', 'prefix' => 'prefix', 'database' => 'database', 'name' => 'foo' ];
+        $pdo      = new DatabaseConnectionFactoryPDOStub;
 
 
-		$factory = Mockery::mock( ConnectionFactory::class, [ new Container() ] )->makePartial();
-		$factory->shouldAllowMockingProtectedMethods();
-		$conn    = $factory->createConnection( 'pgsql', $pdo, 'database', 'prefix', $pgConfig );
+        $factory = Mockery::mock(ConnectionFactory::class, [ new Container() ])->makePartial();
+        $factory->shouldAllowMockingProtectedMethods();
+        $conn    = $factory->createConnection('pgsql', $pdo, 'database', 'prefix', $pgConfig);
 
-		$this->assertInstanceOf( PostgresConnection::class, $conn );
-	}
+        $this->assertInstanceOf(PostgresConnection::class, $conn);
+    }
 }
 
-class DatabaseConnectionFactoryPDOStub extends PDO {
-	public function __construct()
-	{
-	}
+class DatabaseConnectionFactoryPDOStub extends PDO
+{
+    public function __construct()
+    {
+    }
 }
