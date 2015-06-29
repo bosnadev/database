@@ -54,6 +54,78 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
     }
 
     /**
+     * Create the column definition for an int4range type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeInt4range(Fluent $column)
+    {
+        return "int4range";
+    }
+
+    /**
+     * Create the column definition for an int8range type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeInt8range(Fluent $column)
+    {
+        return "int8range";
+    }
+
+    /**
+     * Create the column definition for an numrange type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeNumrange(Fluent $column)
+    {
+        return "numrange";
+    }
+
+    /**
+     * Create the column definition for an tsrange type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeTsrange(Fluent $column)
+    {
+        return "tsrange";
+    }
+
+    /**
+     * Create the column definition for an tstzrange type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeTstzrange(Fluent $column)
+    {
+        return "tstzrange";
+    }
+
+    /**
+     * Create the column definition for an daterange type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeDaterange(Fluent $column)
+    {
+        return "daterange";
+    }
+
+    /**
      * @param mixed $value
      * @return mixed|string
      */

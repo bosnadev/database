@@ -88,4 +88,76 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
     {
         return $this->addColumn('jsonb', $column);
     }
+
+    /**
+     * Create a new int4range column on the table.
+     *
+     * @param string $column
+     *
+     * @return \Illuminate\Support\Fluent
+     */
+    public function int4range($column)
+    {
+        return $this->addColumn('int4range', $column);
+    }
+
+    /**
+     * Create a new int8range column on the table.
+     *
+     * @param string $column
+     *
+     * @return \Illuminate\Support\Fluent
+     */
+    public function int8range($column)
+    {
+        return $this->addColumn('int8range', $column);
+    }
+
+    /**
+     * Create a new numrange column on the table.
+     *
+     * @param string $column
+     *
+     * @return \Illuminate\Support\Fluent
+     */
+    public function numrange($column)
+    {
+        return $this->addColumn('numrange', $column);
+    }
+
+    /**
+     * Create a new tsrange column on the table.
+     *
+     * @param string $column
+     *
+     * @return \Illuminate\Support\Fluent
+     */
+    public function tsrange($column)
+    {
+        return $this->addColumn('tsrange', $column);
+    }
+
+    /**
+     * Create a new tstzrange column on the table.
+     *
+     * @param string $column
+     *
+     * @return \Illuminate\Support\Fluent
+     */
+    public function tstzrange($column)
+    {
+        return $this->addColumn('tstzrange', $column);
+    }
+
+    /**
+     * Create a new daterange column on the table.
+     *
+     * @param $column
+     *
+     * @return \Illuminate\Support\Fluent
+     */
+    public function daterange($column)
+    {
+        return $this->addColumn('daterange', $column);
+    }
 }

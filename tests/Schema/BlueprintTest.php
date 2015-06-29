@@ -60,4 +60,49 @@ class BlueprintTest extends BaseTestCase
 
         $this->blueprint->jsonb('col');
     }
+
+    public function testInt4range()
+    {
+        $this->blueprint
+            ->shouldReceive('addColumn')
+            ->with('int4range', 'col');
+
+        $this->blueprint->int4range('col');
+    }
+
+    public function testInt8range()
+    {
+        $this->blueprint
+            ->shouldReceive('addColumn')
+            ->with('int8range', 'col');
+
+        $this->blueprint->int8range('col');
+    }
+
+    public function testNumrange()
+    {
+        $this->blueprint
+            ->shouldReceive('addColumn')
+            ->with('numrange', 'col');
+
+        $this->blueprint->numrange('col');
+    }
+
+    public function testTsrange()
+    {
+        $this->blueprint
+            ->shouldReceive('addColumn')
+            ->with('tsrange', 'col');
+
+        $this->blueprint->tsrange('col');
+    }
+
+    public function testTstzrange()
+    {
+        $this->blueprint
+            ->shouldReceive('addColumn')
+            ->with('tstzrange', 'col');
+
+        $this->blueprint->tstzrange('col');
+    }
 }
