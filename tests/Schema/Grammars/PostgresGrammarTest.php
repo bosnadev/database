@@ -61,6 +61,90 @@ class PostgresGrammarBaseTest extends BaseTestCase
         $this->assertContains('add column "foo" jsonb', $statements[0]);
     }
 
+    public function testAddingInt4range()
+    {
+        $blueprint = new Blueprint('test');
+        $blueprint->int4range('foo');
+        $statements = $blueprint->toSql(
+            $this->getConnection(),
+            $this->getGrammar()
+        );
+
+        $this->assertEquals(1, count($statements));
+        $this->assertContains('alter table', $statements[0]);
+        $this->assertContains('add column "foo" int4range', $statements[0]);
+    }
+
+    public function testAddingInt8range()
+    {
+        $blueprint = new Blueprint('test');
+        $blueprint->int8range('foo');
+        $statements = $blueprint->toSql(
+            $this->getConnection(),
+            $this->getGrammar()
+        );
+
+        $this->assertEquals(1, count($statements));
+        $this->assertContains('alter table', $statements[0]);
+        $this->assertContains('add column "foo" int8range', $statements[0]);
+    }
+
+    public function testAddingNumrange()
+    {
+        $blueprint = new Blueprint('test');
+        $blueprint->numrange('foo');
+        $statements = $blueprint->toSql(
+            $this->getConnection(),
+            $this->getGrammar()
+        );
+
+        $this->assertEquals(1, count($statements));
+        $this->assertContains('alter table', $statements[0]);
+        $this->assertContains('add column "foo" numrange', $statements[0]);
+    }
+
+    public function testAddingTsrange()
+    {
+        $blueprint = new Blueprint('test');
+        $blueprint->tsrange('foo');
+        $statements = $blueprint->toSql(
+            $this->getConnection(),
+            $this->getGrammar()
+        );
+
+        $this->assertEquals(1, count($statements));
+        $this->assertContains('alter table', $statements[0]);
+        $this->assertContains('add column "foo" tsrange', $statements[0]);
+    }
+
+    public function testAddingTstzrange()
+    {
+        $blueprint = new Blueprint('test');
+        $blueprint->tstzrange('foo');
+        $statements = $blueprint->toSql(
+            $this->getConnection(),
+            $this->getGrammar()
+        );
+
+        $this->assertEquals(1, count($statements));
+        $this->assertContains('alter table', $statements[0]);
+        $this->assertContains('add column "foo" tstzrange', $statements[0]);
+    }
+
+    public function testAddingDatarange()
+    {
+        $blueprint = new Blueprint('test');
+        $blueprint->daterange('foo');
+        $statements = $blueprint->toSql(
+            $this->getConnection(),
+            $this->getGrammar()
+        );
+
+        $this->assertEquals(1, count($statements));
+        $this->assertContains('alter table', $statements[0]);
+        $this->assertContains('add column "foo" daterange', $statements[0]);
+    }
+
     /**
      * @return PostgresConnection
      */
