@@ -7,9 +7,8 @@ use Bosnadev\Database\Schema\Blueprint;
  * Class PostgresGrammar
  * @package Bosnadev\Database\Schema\Grammars
  */
-class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGrammar {
-
-
+class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGrammar
+{
     /**
      * Create the column definition for a character type.
      *
@@ -27,7 +26,8 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      * @param Fluent $column
      * @return string
      */
-    protected function typeHstore(Fluent $column) {
+    protected function typeHstore(Fluent $column)
+    {
         return "hstore";
     }
 
@@ -37,7 +37,8 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      * @param Fluent $column
      * @return string
      */
-    protected function typeUuid(Fluent $column) {
+    protected function typeUuid(Fluent $column)
+    {
         return "uuid";
     }
 
@@ -47,8 +48,81 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      * @param Fluent $column
      * @return string
      */
-    protected function typeJsonb(Fluent $column) {
+    protected function typeJsonb(Fluent $column)
+    {
         return "jsonb";
+    }
+
+    /**
+     * Create the column definition for an int4range type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeInt4range(Fluent $column)
+    {
+        return "int4range";
+    }
+
+    /**
+     * Create the column definition for an int8range type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeInt8range(Fluent $column)
+    {
+        return "int8range";
+    }
+
+    /**
+     * Create the column definition for an numrange type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeNumrange(Fluent $column)
+    {
+        return "numrange";
+    }
+
+    /**
+     * Create the column definition for an tsrange type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeTsrange(Fluent $column)
+    {
+        return "tsrange";
+    }
+
+    /**
+     * Create the column definition for an tstzrange type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeTstzrange(Fluent $column)
+    {
+        return "tstzrange";
+    }
+
+    /**
+     * Create the column definition for an daterange type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeDaterange(Fluent $column)
+    {
+        return "daterange";
     }
 
     /**
@@ -57,7 +131,7 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      */
     protected function getDefaultValue($value)
     {
-        if( $this->isUuid( $value ) ) return strval($value);
+        if($this->isUuid($value)) return strval($value);
 
         return parent::getDefaultValue($value);
     }
@@ -68,8 +142,9 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      * @param $value
      * @return int
      */
-    protected function isUuid($value) {
-        return preg_match( '/^uuid_generate_v/', $value );
+    protected function isUuid($value)
+    {
+        return preg_match('/^uuid_generate_v/', $value);
     }
 
     /**
@@ -85,5 +160,4 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
 
         return sprintf('CREATE INDEX %s ON %s USING GIN(%s)', $command->index, $this->wrapTable($blueprint), $columns);
     }
-
 }
