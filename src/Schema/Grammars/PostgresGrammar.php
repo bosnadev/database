@@ -57,13 +57,9 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
      */
     protected function getDefaultValue($value)
     {
-        if ($value instanceof Expression) return $value;
-
-        if (is_bool($value)) return "'".intval($value)."'";
-
         if( $this->isUuid( $value ) ) return strval($value);
 
-        return "'".strval($value)."'";
+        return parent::getDefaultValue($value);
     }
 
     /**
