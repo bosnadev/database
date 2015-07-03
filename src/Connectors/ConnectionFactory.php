@@ -10,8 +10,8 @@ use Bosnadev\Database\PostgresConnection;
  * Class ConnectionFactory
  * @package Bosnadev\Database\Connectors
  */
-class ConnectionFactory extends \Illuminate\Database\Connectors\ConnectionFactory {
-
+class ConnectionFactory extends \Illuminate\Database\Connectors\ConnectionFactory
+{
     /**
      * @param string $driver
      * @param PDO $connection
@@ -23,16 +23,14 @@ class ConnectionFactory extends \Illuminate\Database\Connectors\ConnectionFactor
      */
     protected function createConnection($driver, PDO $connection, $database, $prefix = '', array $config = array())
     {
-        if ($this->container->bound($key = "db.connection.{$driver}"))
-        {
+        if ($this->container->bound($key = "db.connection.{$driver}")) {
             return $this->container->make($key, array($connection, $database, $prefix, $config));
         }
 
-        if($driver === 'pgsql') {
+        if ($driver === 'pgsql') {
             return new PostgresConnection($connection, $database, $prefix, $config);
         }
 
-        return parent::createConnection( $driver, $connection, $database, $prefix, $config );
+        return parent::createConnection($driver, $connection, $database, $prefix, $config);
     }
-
-} 
+}
