@@ -33,15 +33,15 @@
   "autoload": {
     "psr-4": {
       "Bosnadev\\Database\\": "src/"
-    },
-    "classmap": [
-      "tests/BaseTestCase.php"
-    ]
+    }
   },
   "autoload-dev": {
     "psr-4": {
       "Bosnadev\\Tests\\Database\\": "tests/"
-    }
+    },
+    "classmap": [
+      "tests/BaseTestCase.php"
+    ]
   },
   "minimum-stability": "stable"
 }
