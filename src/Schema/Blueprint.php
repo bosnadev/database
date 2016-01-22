@@ -7,6 +7,23 @@
 class Blueprint extends \Illuminate\Database\Schema\Blueprint
 {
     /**
+     * Inherited table name
+     * @var string
+     */
+    public $inherits;
+
+    /**
+     * Specify table inheritance.
+     *
+     * @param  string $table
+     * @return void
+     */
+    public function inherits($table)
+    {
+        $this->inherits = $table;
+    }
+
+    /**
      * Add the index commands fluently specified on columns.
      *
      * @return void
