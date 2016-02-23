@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Fluent;
 use Bosnadev\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\Blueprint as BaseBlueprint;
 
 /**
  * Class PostgresGrammar
@@ -159,5 +160,22 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
         $columns = $this->columnize($command->columns);
 
         return sprintf('CREATE INDEX %s ON %s USING GIN(%s)', $command->index, $this->wrapTable($blueprint), $columns);
+    }
+
+    /**
+     * Compile create table query.
+     *
+     * @param  Illuminate\Database\Schema\Blueprint  $blueprint
+     * @param  \Illuminate\Support\Fluent  $command
+     * @return string
+     */
+    public function compileCreate(BaseBlueprint $blueprint, Fluent $command)
+    {
+        $sql = parent::compileCreate($blueprint, $command);
+
+        if (isset($blueprint->inherits)) {
+            $sql .= ' INHERITS ("'.$blueprint->inherits.'")';
+        }
+        return $sql;
     }
 }
