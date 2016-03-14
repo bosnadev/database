@@ -22,7 +22,7 @@
   "require": {
     "php": ">=5.4",
     "illuminate/database": "~5.0",
-    "ramsey/uuid": "~2.8"
+    "ramsey/uuid": "~3.0"
   },
   "require-dev": {
     "php": ">=5.4",
