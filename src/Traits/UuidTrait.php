@@ -1,7 +1,7 @@
 <?php namespace Bosnadev\Database\Traits;
 
 use Illuminate\Database\Eloquent\Model;
-use Rhumsaa\Uuid\Uuid;
+use Ramsey\Uuid\Uuid;
 use RuntimeException;
 
 /**
