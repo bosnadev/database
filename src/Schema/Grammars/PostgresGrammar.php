@@ -248,6 +248,18 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
     {
         return "daterange";
     }
+    
+    /**
+     * Create the column definition for a Text Search Vector type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeTsvector(Fluent $column)
+    {
+        return "tsvector";
+    }
 
     /**
      * @param mixed $value

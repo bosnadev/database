@@ -144,6 +144,20 @@ class PostgresGrammarBaseTest extends BaseTestCase
         $this->assertContains('alter table', $statements[0]);
         $this->assertContains('add column "foo" daterange', $statements[0]);
     }
+    
+    public function testAddingTsvector()
+    {
+        $blueprint = new Blueprint('test');
+        $blueprint->tsvector('foo');
+        $statements = $blueprint->toSql(
+            $this->getConnection(),
+            $this->getGrammar()
+        );
+        
+        $this->assertEquals(1, count($statements));
+        $this->assertContains('alter table', $statements[0]);
+        $this->assertContains('add column "foo" tsvector', $statements[0]);
+    }
 
     /**
      * @return PostgresConnection

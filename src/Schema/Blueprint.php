@@ -298,4 +298,16 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
     {
         return $this->addColumn('daterange', $column);
     }
+    
+    /**
+     * Create a new tsvector column on the table.
+     *
+     * @param $column
+     *
+     * @return \Illuminate\Support\Fluent
+     */
+    public function tsvector($column)
+    {
+        return $this->addColumn('tsvector', $column);
+    }
 }
