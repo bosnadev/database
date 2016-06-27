@@ -296,6 +296,20 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
 
         return sprintf('CREATE INDEX %s ON %s USING GIN(%s)', $command->index, $this->wrapTable($blueprint), $columns);
     }
+    
+    /**
+     * Compile a gist index key command.
+     *
+     * @param  \Bosnadev\Database\Schema\Blueprint  $blueprint
+     * @param  \Illuminate\Support\Fluent  $command
+     * @return string
+     */
+    public function compileGist(Blueprint $blueprint, Fluent $command)
+    {
+        $columns = $this->columnize($command->columns);
+
+        return sprintf('CREATE INDEX %s ON %s USING GIST(%s)', $command->index, $this->wrapTable($blueprint), $columns);
+    }
 
     /**
      * Compile create table query.

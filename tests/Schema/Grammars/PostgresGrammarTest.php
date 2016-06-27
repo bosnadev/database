@@ -16,6 +16,17 @@ class PostgresGrammarBaseTest extends BaseTestCase
         $this->assertContains('CREATE INDEX', $statements[0]);
         $this->assertContains('GIN("foo")', $statements[0]);
     }
+    
+    public function testAddingGistIndex()
+    {
+        $blueprint = new Blueprint('test');
+        $blueprint->gist('foo');
+        $statements = $blueprint->toSql($this->getConnection(), $this->getGrammar());
+
+        $this->assertEquals(1, count($statements));
+        $this->assertContains('CREATE INDEX', $statements[0]);
+        $this->assertContains('GIST("foo")', $statements[0]);
+    }
 
     public function testAddingCharacter()
     {
