@@ -24,6 +24,15 @@ class BlueprintTest extends BaseTestCase
 
         $this->blueprint->gin('col', 'myName');
     }
+    
+    public function testGistIndex()
+    {
+        $this->blueprint
+            ->shouldReceive('indexCommand')
+            ->with('gist', 'col', 'myName');
+
+        $this->blueprint->gist('col', 'myName');
+    }
 
     public function testCharacter()
     {
