@@ -21,7 +21,7 @@ class ConnectionFactory extends \Illuminate\Database\Connectors\ConnectionFactor
      * @return PostgresConnection|MySqlConnection|SQLiteConnection|SqlServerConnection|mixed|object
      * @throws \InvalidArgumentException
      */
-    protected function createConnection($driver, $connection, $database, $prefix = '', array $config = array())
+    protected function createConnection($driver, PDO $connection, $database, $prefix = '', array $config = array())
     {
         if ($this->container->bound($key = "db.connection.{$driver}")) {
             return $this->container->make($key, array($connection, $database, $prefix, $config));
