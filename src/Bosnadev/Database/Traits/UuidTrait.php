@@ -1,8 +1,10 @@
-<?php namespace Bosnadev\Database\Traits;
+<?php
 
-use Illuminate\Database\Eloquent\Model;
+namespace Bosnadev\Database\Traits;
+
 use Ramsey\Uuid\Uuid;
 use RuntimeException;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class UuidTrait

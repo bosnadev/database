@@ -1,13 +1,13 @@
 {
   "name": "bosnadev/database",
-  "description": "Eloquent Extended, added some PostgreSql features",
+  "description": "Eloquent Extended, added some PostgreSQL features",
   "keywords": ["laravel", "eloquent", "database", "postgresql", "database"],
   "license": "MIT",
   "homepage": "https://bosnadev.com",
   "authors": [
     {
       "name": "Mirza Pasic",
-      "email": "mirza.pasic@edu.fit.ba"
+      "email": "mirza@bosnadev.com"
     },
     {
       "name": "Peter Haza",
@@ -16,9 +16,9 @@
   ],
   "require": {
     "php": ">=5.4",
-    "illuminate/database": "~5.0",
-    "ramsey/uuid": "~3.0",
-    "doctrine/dbal": "~2.5"
+    "illuminate/database": "^5.0",
+    "ramsey/uuid": "^3.0",
+    "doctrine/dbal": "^2.5"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.5",
@@ -26,13 +26,10 @@
   },
   "autoload": {
     "psr-4": {
-      "Bosnadev\\Database\\": "src/"
+      "Bosnadev\\Database\\": "src/Bosnadev/Database/"
     }
   },
   "autoload-dev": {
-    "psr-4": {
-      "Bosnadev\\Tests\\Database\\": "tests/"
-    },
     "classmap": [
       "tests/BaseTestCase.php"
     ]

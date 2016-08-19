@@ -1,13 +1,16 @@
-<?php namespace Bosnadev\Database;
+<?php
 
-use Bosnadev\Database\Connectors\ConnectionFactory;
+namespace Bosnadev\Database;
+
 use Illuminate\Database\DatabaseManager;
+use Illuminate\Database\DatabaseServiceProvider as IlluminateServiceProvider;
+use Bosnadev\Database\Connectors\ConnectionFactory;
 
 /**
  * Class DatabaseServiceProvider
  * @package Bosnadev\Database
  */
-class DatabaseServiceProvider extends \Illuminate\Database\DatabaseServiceProvider
+class DatabaseServiceProvider extends IlluminateServiceProvider
 {
     /**
      * Register the service provider.

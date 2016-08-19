@@ -1,4 +1,5 @@
 <?php
+
 namespace Bosnadev\Database\Query\Grammars;
 
 use Illuminate\Database\Query\Builder;

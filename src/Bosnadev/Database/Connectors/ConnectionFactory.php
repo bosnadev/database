@@ -1,4 +1,6 @@
-<?php namespace Bosnadev\Database\Connectors;
+<?php
+
+namespace Bosnadev\Database\Connectors;
 
 use PDO;
 use Illuminate\Database\MySqlConnection;

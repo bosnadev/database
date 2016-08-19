@@ -1,7 +1,5 @@
-<?php namespace Schema;
+<?php
 
-use BaseTestCase;
-use Mockery;
 use Bosnadev\Database\Schema\Blueprint;
 
 class BlueprintTest extends BaseTestCase

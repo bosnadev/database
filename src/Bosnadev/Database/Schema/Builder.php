@@ -1,4 +1,6 @@
-<?php namespace Bosnadev\Database\Schema;
+<?php
+
+namespace Bosnadev\Database\Schema;
 
 use Closure;
 

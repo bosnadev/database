@@ -1,9 +1,7 @@
-<?php namespace Query\Grammars;
+<?php
 
-use BaseTestCase;
 use Bosnadev\Database\Query\Grammars\PostgresGrammar;
 use Illuminate\Database\Query\Builder;
-use Mockery;
 
 class PostgresGrammarTest extends BaseTestCase
 {

@@ -1,8 +1,10 @@
-<?php namespace Bosnadev\Database\Schema\Grammars;
+<?php
+
+namespace Bosnadev\Database\Schema\Grammars;
 
 use Illuminate\Support\Fluent;
-use Bosnadev\Database\Schema\Blueprint;
 use Illuminate\Database\Schema\Blueprint as BaseBlueprint;
+use Bosnadev\Database\Schema\Blueprint;
 
 /**
  * Class PostgresGrammar

@@ -1,4 +1,6 @@
-<?php namespace Bosnadev\Database;
+<?php
+
+namespace Bosnadev\Database;
 
 use Illuminate\Database\PostgresConnection as BasePostgresConnection;
 

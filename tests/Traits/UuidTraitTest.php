@@ -1,10 +1,7 @@
-<?php namespace Traits;
+<?php
 
-use BaseTestCase;
 use Bosnadev\Database\Traits\UuidTrait;
 use Illuminate\Database\Eloquent\Model;
-use Mockery;
-use RuntimeException;
 
 class UuidTraitTest extends BaseTestCase
 {

@@ -1,7 +1,7 @@
 <?php
 
-use Bosnadev\Database\PostgresConnection;
 use Bosnadev\Database\Schema\Blueprint;
+use Bosnadev\Database\PostgresConnection;
 use Bosnadev\Database\Schema\Grammars\PostgresGrammar;
 
 class PostgresGrammarBaseTest extends BaseTestCase

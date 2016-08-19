@@ -1,7 +1,5 @@
-<?php namespace Schema;
+<?php
 
-use BaseTestCase;
-use Mockery;
 use Bosnadev\Database\PostgresConnection;
 use Bosnadev\Database\Schema\Builder;
 use Bosnadev\Database\Schema\Blueprint;
