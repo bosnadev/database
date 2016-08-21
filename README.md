@@ -9,7 +9,7 @@ Laravel Postgres Extended
 [![License](https://poser.pugx.org/bosnadev/database/license)](https://packagist.org/packages/bosnadev/database)
 
 
-An extended PostgreSQL driver for Laravel 5 with support for some aditional PostgreSQL data types: hstore, uuid, geometric types (point, path, circle, line, polygon...)
+An extended PostgreSQL driver for Laravel 5.2+ with support for some aditional PostgreSQL data types: hstore, uuid, geometric types (point, path, circle, line, polygon...)
 
 ## Getting Started  
 ### Laravel 5.2
