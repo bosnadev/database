@@ -13,10 +13,10 @@ engines:
   phpmd:
     enabled: true
     checks:
-	Design/TooManyMethods:
-	  enabled: false
-	UnusedFormalParameter:
-      enabled: false
+      Design/TooManyMethods:
+        enabled: false
+      UnusedFormalParameter:
+        enabled: false
 ratings:
   paths:
   - "**.inc"
