@@ -1,19 +1,4 @@
 ---
-engines:
-  duplication:
-    enabled: true
-    config:
-      languages:
-      - php
-  fixme:
-    enabled: true
-  phpmd:
-    enabled: true
-    checks:
-      Design/TooManyMethods:
-        enabled: false
-      UnusedFormalParameter:
-        enabled: false
 languages:
   Ruby: false
   JavaScript: false
