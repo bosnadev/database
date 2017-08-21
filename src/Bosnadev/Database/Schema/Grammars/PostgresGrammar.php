@@ -325,7 +325,7 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
         $sql = parent::compileCreate($blueprint, $command);
 
         if (isset($blueprint->inherits)) {
-            $sql .= ' INHERITS ("'.$blueprint->inherits.'")';
+            $sql .= ' INHERITS ('.$blueprint->inherits.')';
         }
         return $sql;
     }
