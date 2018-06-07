@@ -101,37 +101,6 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
     }
 
     /**
-     * @param $column
-     * @return \Illuminate\Support\Fluent
-     */
-    public function uuid($column)
-    {
-        return $this->addColumn('uuid', $column);
-    }
-
-    /**
-     * Create a new jsonb column on the table
-     *
-     * @param $column
-     * @return \Illuminate\Support\Fluent
-     */
-    public function jsonb($column)
-    {
-        return $this->addColumn('jsonb', $column);
-    }
-
-    /**
-     * Create a new IPv4/IPv6 address (inet) column on the table.
-     *
-     * @param  string  $column
-     * @return \Illuminate\Support\Fluent
-     */
-    public function ipAddress($column)
-    {
-        return $this->addColumn('ipAddress', $column);
-    }
-    
-    /**
      * Create a new netmask (CIDR-notation) (cidr) column on the table.
      *
      * @param  string  $column
@@ -140,28 +109,6 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
     public function netmask($column)
     {
         return $this->addColumn('netmask', $column);
-    }
-    
-    /**
-     * Create a new MAC address (macaddr) column on the table.
-     *
-     * @param  string  $column
-     * @return \Illuminate\Support\Fluent
-     */
-    public function macAddress($column)
-    {
-        return $this->addColumn('macAddress', $column);
-    }
-
-    /**
-     * Create a new point column on the table.
-     *
-     * @param  string  $column
-     * @return \Illuminate\Support\Fluent
-     */
-    public function point($column)
-    {
-        return $this->addColumn('point', $column);
     }
 
     /**
@@ -206,17 +153,6 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
     public function box($column)
     {
         return $this->addColumn('box', $column);
-    }
-
-    /**
-     * Create a new polygon column on the table.
-     *
-     * @param  string  $column
-     * @return \Illuminate\Support\Fluent
-     */
-    public function polygon($column)
-    {
-        return $this->addColumn('polygon', $column);
     }
 
     /**
