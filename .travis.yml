@@ -7,10 +7,8 @@ php:
   - 7.1
   - 7.2
   - 7.3
-  - hhvm
 
 before_script:
-  - curl -sSf -o ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
 
