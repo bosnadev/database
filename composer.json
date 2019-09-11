@@ -27,7 +27,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Bosnadev\\Database\\": "src/Bosnadev/Database/"
+      "Bosnadev\\Database\\": "src/"
     }
   },
   "autoload-dev": {

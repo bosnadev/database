@@ -7,19 +7,16 @@ use Illuminate\Database\MySqlConnection;
 use Illuminate\Database\SQLiteConnection;
 use Illuminate\Database\SqlServerConnection;
 use Bosnadev\Database\PostgresConnection;
+use Illuminate\Database\Connectors\ConnectionFactory as IlluminateConnectionFactory;
 
-/**
- * Class ConnectionFactory
- * @package Bosnadev\Database\Connectors
- */
-class ConnectionFactory extends \Illuminate\Database\Connectors\ConnectionFactory
+class ConnectionFactory extends IlluminateConnectionFactory
 {
     /**
-     * @param string $driver
-     * @param PDO $connection
-     * @param string $database
-     * @param string $prefix
-     * @param array $config
+     * @param  string $driver
+     * @param  PDO $connection
+     * @param  string $database
+     * @param  string $prefix
+     * @param  array $config
      * @return PostgresConnection|MySqlConnection|SQLiteConnection|SqlServerConnection|mixed|object
      * @throws \InvalidArgumentException
      */
