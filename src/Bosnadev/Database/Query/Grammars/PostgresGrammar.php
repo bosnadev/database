@@ -59,7 +59,7 @@ class PostgresGrammar extends LaravelPostgresGrammar
      */
     protected function whereNull(Builder $query, $where)
     {
-        return '(' . $this->wrap($where['column']) . ') is null';
+        return '(' . $this->wrapValue($where['column']) . ') is null';
     }
 
     /**
@@ -72,6 +72,6 @@ class PostgresGrammar extends LaravelPostgresGrammar
      */
     protected function whereNotNull(Builder $query, $where)
     {
-        return '(' . $this->wrap($where['column']) . ') is not null';
+        return '(' . $this->wrapValue($where['column']) . ') is not null';
     }
 }
