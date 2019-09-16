@@ -25,16 +25,6 @@ class PostgresConnection extends BasePostgresConnection
         return new Schema\Builder($this);
     }
 
-    /**
-     * Get the default query grammar instance.
-     *
-     * @return \Illuminate\Database\Grammar
-     */
-    protected function getDefaultQueryGrammar()
-    {
-        return $this->withTablePrefix(new Query\Grammars\PostgresGrammar);
-    }
-
 
     /**
      * Get the default schema grammar instance.
