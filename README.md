@@ -13,7 +13,7 @@ Laravel Postgres Extended
 An extended PostgreSQL driver for Laravel 5.2+ with support for some aditional PostgreSQL data types: hstore, uuid, geometric types (point, path, circle, line, polygon...)
 
 ## Getting Started  
-### Laravel 5.2
+### Laravel 5.2+
 1. Run `composer require bosnadev/database` in your project root directory.
 2. Add `Bosnadev\Database\DatabaseServiceProvider::class` to `config/app.php`'s `providers` array.
 
