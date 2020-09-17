@@ -35,5 +35,12 @@
       "tests/BaseTestCase.php"
     ]
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Bosnadev\\Database\\DatabaseServiceProvider"
+      ]
+    }
+  },
   "minimum-stability": "stable"
 }
