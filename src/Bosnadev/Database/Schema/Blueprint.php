@@ -260,4 +260,16 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
     {
         return $this->addColumn('tsvector', $column);
     }
+
+    /**
+     * Create a new citext column on the table.
+     *
+     * @param $column
+     *
+     * @return \Illuminate\Support\Fluent
+     */
+    public function citext($column)
+    {
+        return $this->addColumn('citext', $column);
+    }
 }
