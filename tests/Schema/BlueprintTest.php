@@ -112,4 +112,13 @@ class BlueprintTest extends BaseTestCase
 
         $this->blueprint->tstzrange('col');
     }
+    
+    public function testCitext()
+    {
+        $this->blueprint
+            ->shouldReceive('addColumn')
+            ->with('citext', 'col');
+        
+        $this->blueprint->citext('col');            
+    }
 }
