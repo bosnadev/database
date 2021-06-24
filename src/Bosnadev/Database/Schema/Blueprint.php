@@ -33,7 +33,7 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
     protected function addFluentIndexes()
     {
         foreach ($this->columns as $column) {
-            foreach (array('primary', 'unique', 'index', 'gin', 'gist') as $index) {
+            foreach (['unique', 'index', 'gin', 'gist'] as $index) {
                 // If the index has been specified on the given column, but is simply
                 // equal to "true" (boolean), no name has been specified for this
                 // index, so we will simply call the index methods without one.
