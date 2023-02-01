@@ -1,39 +1,45 @@
 {
-  "name": "bosnadev/database",
-  "description": "Eloquent Extended, added some PostgreSQL features",
-  "keywords": ["laravel", "eloquent", "database", "postgresql", "database"],
-  "license": "MIT",
-  "homepage": "https://bosnadev.com",
-  "authors": [
-    {
-      "name": "Mirza Pasic",
-      "email": "mirza@bosnadev.com"
+    "name": "bosnadev/database",
+    "description": "Eloquent Extended, added some PostgreSQL features",
+    "keywords": [
+        "laravel",
+        "eloquent",
+        "database",
+        "postgresql",
+        "database"
+    ],
+    "license": "MIT",
+    "homepage": "https://bosnadev.com",
+    "authors": [
+        {
+            "name": "Mirza Pasic",
+            "email": "mirza@bosnadev.com"
+        },
+        {
+            "name": "Peter Haza",
+            "email": "peter.haza@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "illuminate/database": "^5.0|^6.0|^7.0|^8.0|^9.0|^10.0",
+        "ramsey/uuid": "^3.0|^4.0",
+        "doctrine/dbal": "^2.5|^3.0"
     },
-    {
-      "name": "Peter Haza",
-      "email": "peter.haza@gmail.com"
-    }
-  ],
-  "require": {
-    "php": ">=5.5",
-    "illuminate/database": "^5.0|^6.0|^7.0|^8.0|^9.0",
-    "ramsey/uuid": "^3.0|^4.0",
-    "doctrine/dbal": "^2.5|^3.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "~4.5",
-    "mockery/mockery": "0.9.*",
-    "codeclimate/php-test-reporter": "^0.3.2"
-  },
-  "autoload": {
-    "psr-4": {
-      "Bosnadev\\Database\\": "src/Bosnadev/Database/"
-    }
-  },
-  "autoload-dev": {
-    "classmap": [
-      "tests/BaseTestCase.php"
-    ]
-  },
-  "minimum-stability": "stable"
+    "require-dev": {
+        "phpunit/phpunit": "~4.5|^9.5.10",
+        "mockery/mockery": "0.9.*|^1.4.4",
+        "codeclimate/php-test-reporter": "^0.3.2|^0.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bosnadev\\Database\\": "src/Bosnadev/Database/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/BaseTestCase.php"
+        ]
+    },
+    "minimum-stability": "stable"
 }
