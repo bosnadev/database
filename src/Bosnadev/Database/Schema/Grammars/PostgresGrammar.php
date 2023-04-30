@@ -279,6 +279,18 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
     }
 
     /**
+     * Create the column definition for a Case Insensitive Text type.
+     *
+     * @param Fluent $column
+     *
+     * @return string
+     */
+    protected function typeCitext(Fluent $column)
+    {
+        return "citext";
+    }
+
+    /**
      * @param mixed $value
      * @return mixed|string
      */

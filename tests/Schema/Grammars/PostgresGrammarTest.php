@@ -170,6 +170,20 @@ class PostgresGrammarBaseTest extends BaseTestCase
         $this->assertContains('add column "foo" tsvector', $statements[0]);
     }
 
+    public function testAddingCitext()
+    {
+        $blueprint = new Blueprint('test');
+        $blueprint->citext('foo');
+        $statements = $blueprint->toSql(
+            $this->getConnection(),
+            $this->getGrammar()
+        );
+
+        $this->assertEquals(1, count($statements));
+        $this->assertContains('alter table', $statements[0]);
+        $this->assertContains('add column "foo" citext', $statements[0]);
+    }
+
     /**
      * @return PostgresConnection
      */
